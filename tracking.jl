@@ -84,8 +84,7 @@ bunch_C = bunch_charge_C(beam)
 function measure_observables!(
     beam,
     ring,
-    bpm,
-    bunch_C;
+    bpm;
     dS      = _dS,
     dX      = _dX,
     dY      = _dY,
@@ -115,7 +114,7 @@ function measure_observables!(
         for obj in values(bpm)
     )
 
-    S = bunch_C
+    S = bunch_charge_C(beam)
 
     for ele in ring.line
         iszero(S) && break
